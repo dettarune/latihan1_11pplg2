@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'widget/inputField.dart'; // Pastikan file ini ada
+import 'widget/inputField.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -24,17 +24,14 @@ class _RegisterPageState extends State<RegisterPage> {
         padding: EdgeInsets.all(24),
         child: ListView(
           children: [
-            // Input nama
             InputField(label: "Nama", controller: txtName),
 
             SizedBox(height: 12),
 
-            // Input email/username
             InputField(label: "Email / Username", controller: txtEmail),
 
             SizedBox(height: 12),
 
-            // Input password
             InputField(
               label: "Password",
               controller: txtPassword,
@@ -43,7 +40,6 @@ class _RegisterPageState extends State<RegisterPage> {
 
             SizedBox(height: 12),
 
-            // Dropdown jenis kelamin
             DropdownButtonFormField<String>(
               value: gender,
               items: ["Laki-laki", "Perempuan"]
@@ -65,7 +61,6 @@ class _RegisterPageState extends State<RegisterPage> {
 
             SizedBox(height: 12),
 
-            // Input tanggal lahir
             InputField(
               label: "Tanggal Lahir",
               controller: txtDOB,
@@ -85,10 +80,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
             SizedBox(height: 20),
 
-            // Tombol daftar
             ElevatedButton(
               onPressed: () {
-                // Bisa ditambah validasi atau simpan data di sini
                 final nama = txtName.text;
                 final email = txtEmail.text;
                 final pass = txtPassword.text;
@@ -101,7 +94,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 print("Gender: $gender");
                 print("Tanggal Lahir: $dob");
 
-                // Misal pindah ke halaman login lagi setelah daftar
                 Navigator.pop(context);
               },
               child: Text("Daftar"),

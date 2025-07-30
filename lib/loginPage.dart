@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Container(
                 margin: const EdgeInsets.symmetric(vertical: 10),
                 child: Image.asset(
-                  'asete/tutwuri.png',
+                  'assets/logo.png',
                   width: 150,
                   height: 150,
                 ),
