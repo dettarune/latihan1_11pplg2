@@ -1,16 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:latihan1_11pplg2/controllers/calculator_controller.dart';
+  import 'package:flutter/material.dart';
+  import 'package:get/get.dart';
+  import 'package:latihan1_11pplg2/controllers/calculator_controller.dart';
 
-class ResultDisplay extends StatelessWidget {
-  const ResultDisplay({super.key});
+  class ResultDisplay extends StatelessWidget {
+    const ResultDisplay({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    final controller = Get.find<CalculatorController>();
+    @override
+    Widget build(BuildContext context) {
+      final controller = Get.find<CalculatorController>();
 
-    return Obx(
-          () => Container(
+      return Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -23,7 +22,7 @@ class ResultDisplay extends StatelessWidget {
             ),
           ],
         ),
-        child: Text(
+        child: Obx(() => Text(
           controller.hasil.value,
           textAlign: TextAlign.right,
           style: const TextStyle(
@@ -31,8 +30,7 @@ class ResultDisplay extends StatelessWidget {
             fontWeight: FontWeight.bold,
             color: Colors.black87,
           ),
-        ),
-      ),
-    );
+        )),
+      );
+    }
   }
-}

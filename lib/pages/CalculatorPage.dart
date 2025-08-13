@@ -5,6 +5,7 @@ import 'package:latihan1_11pplg2/widgets/custom_input_field.dart';
 import 'package:latihan1_11pplg2/widgets/result_display.dart';
 import 'package:latihan1_11pplg2/widgets/operation_grid.dart';
 import 'package:latihan1_11pplg2/widgets/clear_button.dart';
+import 'package:latihan1_11pplg2/pages/football_player.dart'; // pastikan path sesuai
 
 class CalculatorPage extends StatefulWidget {
   const CalculatorPage({super.key});
@@ -42,7 +43,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const ResultDisplay(),
+            ResultDisplay(),
             const SizedBox(height: 32),
             CustomInputField(
               controller: calculatorController.txtAngka1,
@@ -59,6 +60,21 @@ class _CalculatorPageState extends State<CalculatorPage> {
             const OperationGrid(),
             const SizedBox(height: 24),
             const ClearButton(),
+
+            const SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(() => FootballPlayer());
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+                padding: const EdgeInsets.symmetric(vertical: 16),
+              ),
+              child: const Text(
+                "Lihat Football Players",
+                style: TextStyle(fontSize: 18, color: Colors.white),
+              ),
+            ),
           ],
         ),
       ),

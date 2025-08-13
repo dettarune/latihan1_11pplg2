@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:latihan1_11pplg2/pages/CalculatorPage.dart';
+import 'package:latihan1_11pplg2/routes/pages.dart';
+import 'package:latihan1_11pplg2/routes/routes.dart';
 import 'loginPage.dart';
 
 void main() {
@@ -15,9 +17,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Login Register',
-      home: CalculatorPage(
-
-      ),
+      initialRoute: AppRoutes.calculatorPage,
+      getPages: AppPages.pages
     );
   }
 }
