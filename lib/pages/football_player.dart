@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:latihan1_11pplg2/controllers/football_player_controller.dart';
-import 'package:latihan1_11pplg2/pages/edit_football_player_page.dart';
+import 'package:latihan1_11pplg2/routes/routes.dart';
 
 class FootballPlayer extends StatelessWidget {
   FootballPlayer({super.key});
@@ -26,7 +26,13 @@ class FootballPlayer extends StatelessWidget {
                 ),
                 trailing: const Icon(Icons.edit),
                 onTap: () {
-                  Get.to(() => EditPlayerPage(playerIndex: index));
+                  Get.toNamed(
+                    AppRoutes.footballEditPage,
+                    arguments: {
+                      "playerIndex": index,
+                      "player": player,
+                    },
+                  );
                 },
               );
             },

@@ -30,7 +30,7 @@ class FootballPlayerController extends GetxController {
       "name": "Ronaldo",
       "position": "Forward",
       "number": "11",
-      "imagePath": "assets/fiqar.enc",
+      "imagePath": "assets/ronaldo.jpeg",
     },
   ].obs;
 
@@ -38,12 +38,10 @@ class FootballPlayerController extends GetxController {
     if (newName.trim().isNotEmpty &&
         newPosition.trim().isNotEmpty &&
         newNumber.trim().isNotEmpty) {
-      final oldImagePath = players[index]["imagePath"];
       players[index] = {
         "name": newName.trim(),
         "position": newPosition.trim(),
         "number": newNumber.trim(),
-        "imagePath": oldImagePath ?? "",
       };
     }
   }
