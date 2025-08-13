@@ -10,19 +10,15 @@ class EditPlayerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final args = Get.arguments as Map<String, dynamic>;
-    final int playerIndex = args["playerIndex"];
-    final Map<String, String> player = Map<String, String>.from(args["player"]);
+    final int playerIndex = Get.arguments as int; // hanya index
 
-    print(args);
-    print(player);
+    final controller = Get.find<FootballPlayerController>();
+    final player = controller.players[playerIndex];
 
     final TextEditingController nameController = TextEditingController(text: player["name"] ?? "");
     final TextEditingController positionController = TextEditingController(text: player["position"] ?? "");
     final TextEditingController playerNumberController = TextEditingController(text: player["number"] ?? "");
     final TextEditingController imagePathController = TextEditingController(text: player["imagePath"] ?? "");
-
-    final controller = Get.find<FootballPlayerController>();
 
     return Scaffold(
       appBar: AppBar(title: const Text("Edit Player")),
@@ -40,7 +36,6 @@ class EditPlayerPage extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-              const SizedBox(height: 20),
               const SizedBox(height: 20),
               CustomInputField(
                 controller: nameController,
