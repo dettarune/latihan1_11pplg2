@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:latihan1_11pplg2/pages/CalculatorPage.dart';
+import 'package:get/route_manager.dart';
+import 'package:latihan1_11pplg2/pages/bottom_navbar.dart';
 import 'package:latihan1_11pplg2/routes/pages.dart';
 import 'package:latihan1_11pplg2/routes/routes.dart';
-import 'loginPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +14,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Login Register',
-      initialRoute: AppRoutes.calculatorPage,
-      getPages: AppPages.pages
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      ),
+      initialRoute: "/",
+      getPages: AppPages.pages,
+      home: Navbar(),
     );
   }
 }

@@ -10,15 +10,19 @@ class EditPlayerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final int playerIndex = Get.arguments as int; // hanya index
+    final int playerIndex = Get.arguments as int;
 
     final controller = Get.find<FootballPlayerController>();
     final player = controller.players[playerIndex];
 
-    final TextEditingController nameController = TextEditingController(text: player["name"] ?? "");
-    final TextEditingController positionController = TextEditingController(text: player["position"] ?? "");
-    final TextEditingController playerNumberController = TextEditingController(text: player["number"] ?? "");
-    final TextEditingController imagePathController = TextEditingController(text: player["imagePath"] ?? "");
+    final TextEditingController nameController =
+    TextEditingController(text: player["name"] ?? "");
+    final TextEditingController positionController =
+    TextEditingController(text: player["position"] ?? "");
+    final TextEditingController playerNumberController =
+    TextEditingController(text: player["number"] ?? "");
+    final TextEditingController imagePathController =
+    TextEditingController(text: player["imagePath"] ?? "");
 
     return Scaffold(
       appBar: AppBar(title: const Text("Edit Player")),
@@ -52,6 +56,11 @@ class EditPlayerPage extends StatelessWidget {
                 label: "Player Number",
                 isNumeric: true,
               ),
+              const SizedBox(height: 20),
+              CustomInputField(
+                controller: imagePathController,
+                label: "Image Path",
+              ),
               const SizedBox(height: 30),
               CustomButton(
                 text: "Save",
@@ -62,6 +71,7 @@ class EditPlayerPage extends StatelessWidget {
                     nameController.text,
                     positionController.text,
                     playerNumberController.text,
+                    imagePathController.text,
                   );
                   Get.back();
                 },

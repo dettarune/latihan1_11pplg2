@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:latihan1_11pplg2/controllers/football_player_controller.dart';
 import 'package:latihan1_11pplg2/routes/routes.dart';
 
-class FootballPlayer extends StatelessWidget {
-  FootballPlayer({super.key});
+class FootballPlayerPage extends StatelessWidget {
+  FootballPlayerPage({super.key});
 
   final FootballPlayerController controller = Get.put(FootballPlayerController());
 

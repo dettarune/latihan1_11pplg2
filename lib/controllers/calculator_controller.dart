@@ -7,32 +7,28 @@ class CalculatorController extends GetxController {
   var hasil = "0".obs;
 
   void tambah() {
-    double angka1 = double.parse(txtAngka1.text.toString());
-    double angka2 = double.parse(txtAngka2.text.toString());
-    double hasilJumlah = angka1 + angka2;
-    hasil.value = hasilJumlah.toString();
+    double angka1 = double.tryParse(txtAngka1.text) ?? 0;
+    double angka2 = double.tryParse(txtAngka2.text) ?? 0;
+    hasil.value = (angka1 + angka2).toString();
   }
 
   void kurang() {
-    double angka1 = double.parse(txtAngka1.text.toString());
-    double angka2 = double.parse(txtAngka2.text.toString());
-    double hasilKurang = angka1 - angka2;
-    hasil.value = hasilKurang.toString();
+    double angka1 = double.tryParse(txtAngka1.text) ?? 0;
+    double angka2 = double.tryParse(txtAngka2.text) ?? 0;
+    hasil.value = (angka1 - angka2).toString();
   }
 
   void kali() {
-    double angka1 = double.parse(txtAngka1.text.toString());
-    double angka2 = double.parse(txtAngka2.text.toString());
-    double hasilKali = angka1 * angka2;
-    hasil.value = hasilKali.toString();
+    double angka1 = double.tryParse(txtAngka1.text) ?? 0;
+    double angka2 = double.tryParse(txtAngka2.text) ?? 0;
+    hasil.value = (angka1 * angka2).toString();
   }
 
   void bagi() {
-    double angka1 = double.parse(txtAngka1.text.toString());
-    double angka2 = double.parse(txtAngka2.text.toString());
+    double angka1 = double.tryParse(txtAngka1.text) ?? 0;
+    double angka2 = double.tryParse(txtAngka2.text) ?? 0;
     if (angka2 != 0) {
-      double hasilBagi = angka1 / angka2;
-      hasil.value = hasilBagi.toString();
+      hasil.value = (angka1 / angka2).toString();
     } else {
       Get.snackbar("Error", "Tidak bisa dibagi dengan nol.");
       hasil.value = "Error";

@@ -34,15 +34,13 @@ class FootballPlayerController extends GetxController {
     },
   ].obs;
 
-  void editPlayer(int index, String newName, String newPosition, String newNumber) {
-    if (newName.trim().isNotEmpty &&
-        newPosition.trim().isNotEmpty &&
-        newNumber.trim().isNotEmpty) {
-      players[index] = {
-        "name": newName.trim(),
-        "position": newPosition.trim(),
-        "number": newNumber.trim(),
-      };
+  void editPlayer(int index, String newName, String newPosition, String newNumber, String newImagePath) {
+    if (newName.trim().isNotEmpty && newPosition.trim().isNotEmpty && newNumber.trim().isNotEmpty) {
+      players[index]["name"] = newName.trim();
+      players[index]["position"] = newPosition.trim();
+      players[index]["number"] = newNumber.trim();
+      if (newImagePath.trim().isNotEmpty) players[index]["imagePath"] = newImagePath.trim();
+      players.refresh();
     }
   }
 }

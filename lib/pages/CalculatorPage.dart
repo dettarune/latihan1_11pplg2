@@ -6,25 +6,10 @@ import 'package:latihan1_11pplg2/widgets/custom_input_field.dart';
 import 'package:latihan1_11pplg2/widgets/result_display.dart';
 import 'package:latihan1_11pplg2/widgets/operation_grid.dart';
 import 'package:latihan1_11pplg2/widgets/clear_button.dart';
-import 'package:latihan1_11pplg2/pages/football_player.dart'; // pastikan path sesuai
+import 'package:latihan1_11pplg2/pages/football_player_page.dart';
 
-class CalculatorPage extends StatefulWidget {
-  const CalculatorPage({super.key});
-
-  @override
-  State<CalculatorPage> createState() => _CalculatorPageState();
-}
-
-class _CalculatorPageState extends State<CalculatorPage> {
+class CalculatorPage extends StatelessWidget {
   final CalculatorController calculatorController = Get.put(CalculatorController());
-
-  @override
-  void dispose() {
-    calculatorController.txtAngka1.dispose();
-    calculatorController.txtAngka2.dispose();
-    Get.delete<CalculatorController>();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,20 +47,6 @@ class _CalculatorPageState extends State<CalculatorPage> {
             const SizedBox(height: 24),
             const ClearButton(),
 
-            const SizedBox(height: 24),
-            ElevatedButton(
-              onPressed: () {
-                Get.to(() => FootballPlayer());
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red,
-                padding: const EdgeInsets.symmetric(vertical: 16),
-              ),
-              child: const Text(
-                "Lihat Football Players",
-                style: TextStyle(fontSize: 18, color: Colors.white),
-              ),
-            ),
           ],
         ),
       ),
